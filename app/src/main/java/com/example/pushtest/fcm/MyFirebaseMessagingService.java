@@ -24,14 +24,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(@NonNull RemoteMessage message) {
         super.onMessageReceived(message);
-
-//        RemoteMessage.Notification notification = message.getNotification();
-//        if (notification == null) {
-//            return;
-//        }
-//        String strTitle = notification.getTitle();
-//        String strMessage = notification.getBody();
-
+        //setting data messages
         Map<String, String> stringMap = message.getData();
         String strTitle = stringMap.get("user_name");
         String strMessage = stringMap.get("description");
